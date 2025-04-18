@@ -1,0 +1,330 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Playground</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="main-container">
+    <h1>Design Playground</h1>
+    <div class="central-layout">
+      <!-- Left Side: Volume Knob Controls -->
+      <div class="controls left-controls">
+        <h3>Volume Knob Controls</h3>
+        <div class="layer-selector" data-control="volume">
+          <label>Layers:</label>
+          <div class="layer-option">
+            <input type="checkbox" name="volumeLayer" value="1" checked> <span>Layer 1</span>
+          </div>
+          <div class="layer-option">
+            <input type="checkbox" name="volumeLayer" value="2"> <span>Layer 2</span>
+          </div>
+          <div class="layer-option">
+            <input type="checkbox" name="volumeLayer" value="3"> <span>Layer 3</span>
+          </div>
+        </div>
+        <!-- New Active Layer Selection for Volume Knob -->
+        <div class="active-layer-selector" data-control="volume">
+          <label>Active Layer:</label>
+          <div class="layer-option">
+            <input type="radio" name="activeVolumeLayer" value="1" checked> <span>Layer 1</span>
+          </div>
+          <div class="layer-option">
+            <input type="radio" name="activeVolumeLayer" value="2"> <span>Layer 2</span>
+          </div>
+          <div class="layer-option">
+            <input type="radio" name="activeVolumeLayer" value="3"> <span>Layer 3</span>
+          </div>
+        </div>
+        <!-- Basic Volume Knob Controls -->
+        <div class="volume-knob-basic-controls">
+          <div class="control-group">
+            <label class="label" for="knobFrames">Frame Num:</label>
+            <input type="number" id="knobFrames" min="1" max="300" value="127">
+          </div>
+          <div class="control-group">
+            <label class="label" for="knobCanvasWidth">Width (px):</label>
+            <input type="number" id="knobCanvasWidth" min="50" max="1000" value="200">
+          </div>
+          <div class="control-group">
+            <label class="label" for="knobCanvasHeight">Height (px):</label>
+            <input type="number" id="knobCanvasHeight" min="50" max="1000" value="200">
+          </div>
+        </div>
+        <!-- Universal Indicator Controls for Volume Knob -->
+        <div class="universal-indicator-controls" id="volumeIndicatorControls">
+          <h4>Volume Knob Indicator Controls</h4>
+          <div class="control-group">
+            <label class="label" for="volume_baseColor">Base Color:</label>
+            <input type="color" id="volume_baseColor" value="#343434">
+          </div>
+          <!-- New Custom Skin Controls -->
+          <div class="custom-skin-controls">
+            <div class="control-group">
+              <label class="label">Custom Skin:</label>
+              <div class="custom-file-upload">
+                <input type="file" id="volume_customSkinUpload" accept="image/*">
+                <label for="volume_customSkinUpload" class="custom-file-button">Choose Image</label>
+                <span id="customSkinLabel">No file chosen</span>
+                <button id="clearCustomSkin" class="clear-skin-btn">Clear</button>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="label" for="volume_useCustomSkin">Use Custom Skin:</label>
+              <input type="checkbox" id="volume_useCustomSkin" disabled>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="label" for="volume_fillColor">Fill Color:</label>
+            <input type="color" id="volume_fillColor" value="#808080">
+          </div>
+          <div class="control-group">
+            <label class="label" for="volume_edgeStrokeEnabled">Edge Stroke:</label>
+            <input type="checkbox" id="volume_edgeStrokeEnabled">
+          </div>
+          <div class="control-group">
+            <label class="label" for="volume_edgeStrokeThickness">Edge Thickness:</label>
+            <input type="range" id="volume_edgeStrokeThickness" min="0" max="4" value="2">
+            <span id="volume_edgeStrokeThicknessValue">2</span>
+          </div>
+          <div class="control-group">
+            <label class="label" for="volume_edgeStrokeColor">Edge Color:</label>
+            <input type="color" id="volume_edgeStrokeColor" value="#808080">
+          </div>
+          <div class="control-group">
+            <label class="label" for="volume_edgeSegmentsEnabled">Edge Segments:</label>
+            <input type="checkbox" id="volume_edgeSegmentsEnabled">
+          </div>
+          <div id="edgeSegmentsControls" style="display: none;">
+            <div class="control-group">
+              <label class="label" for="volume_edgeSegmentType">Segment Type:</label>
+              <select id="volume_edgeSegmentType">
+                <option value="dot">Dot</option>
+                <option value="line">Line</option>
+                <option value="vertical-line">Vertical Line</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label class="label" for="volume_edgeSegmentAmount">Segment Count:</label>
+              <input type="range" id="volume_edgeSegmentAmount" min="1" max="20" value="5">
+              <span id="volume_edgeSegmentAmountValue">5</span>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="label" for="volume_indicatorSize">Circle Size:</label>
+            <input type="range" id="volume_indicatorSize" min="1" max="50" value="8">
+            <span id="volume_indicatorSizeValue">8</span>
+          </div>
+          <div class="control-group">
+            <label class="label" for="volume_indicatorOffset">Radial Offset:</label>
+            <input type="range" id="volume_indicatorOffset" min="0" max="90" value="90">
+            <span id="volume_indicatorOffsetValue">90</span>
+          </div>
+          <div class="control-group">
+            <label class="label" for="volume_indicatorShape">Indicator Shape:</label>
+            <select id="volume_indicatorShape">
+              <option value="circle" selected>Circle</option>
+              <option value="rectangle">Rectangle</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label class="label" for="volume_bevelEmboss">Bevel/Emboss FX:</label>
+            <input type="range" id="volume_bevelEmboss" min="0" max="20" value="0">
+            <span id="volume_bevelEmbossValue">0</span>
+          </div>
+          <div class="control-group">
+            <label class="label" for="volume_innerShadow">Inner Shadow FX:</label>
+            <input type="range" id="volume_innerShadow" min="0" max="25" step="0.5" value="0">
+            <span id="volume_innerShadowValue">0</span>
+          </div>
+          <div class="control-group">
+            <label class="label" for="volume_stretchEnabled">Stretch Indicator:</label>
+            <input type="checkbox" id="volume_stretchEnabled">
+          </div>
+          <div class="control-group">
+            <label class="label" for="volume_radialExtension">Radial Extension (px):</label>
+            <input type="range" id="volume_radialExtension" min="0" max="90" value="90">
+            <span id="volume_radialExtensionValue">90</span>
+          </div>
+          <div class="control-group">
+            <label class="label" for="volume_innerFillSize">Inner Fill Size:</label>
+            <input type="range" id="volume_innerFillSize" min="0" max="100" value="100">
+            <span id="volume_innerFillSizeValue">100</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Central Display: Both Visual Elements -->
+      <div class="display">
+        <div class="design-display-container">
+          <!-- Volume Knob Design -->
+          <div id="volumeDesign" class="design-display">
+            <h2>Volume Knob</h2>
+            <canvas id="volumeKnobCanvas" width="200" height="200"></canvas>
+          </div>
+          <!-- Progress Bar Design -->
+          <div id="progressDesign" class="design-display">
+            <h2>Progress Bar</h2>
+            <div class="progress-svg-container">
+              <svg id="progressBarSVG" width="20" height="300">
+                <rect id="progressStroke" x="0" y="0" width="20" height="300" rx="8" ry="8" fill="#808080"></rect>
+                <rect id="progressBg" x="1" y="1" width="18" height="298" rx="8" ry="8" fill="#343434"></rect>
+                <rect id="progressFill" x="1" y="1" width="18" height="0" rx="8" ry="8" fill="#808080"></rect>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Side: Progress Bar Controls -->
+      <div class="controls right-controls">
+        <h3>Progress Bar Controls</h3>
+        <div class="layer-selector" data-control="progress">
+          <label>Layers:</label>
+          <div class="layer-option">
+            <input type="checkbox" name="progressLayer" value="1" checked> <span>Layer 1</span>
+          </div>
+          <div class="layer-option">
+            <input type="checkbox" name="progressLayer" value="2"> <span>Layer 2</span>
+          </div>
+          <div class="layer-option">
+            <input type="checkbox" name="progressLayer" value="3"> <span>Layer 3</span>
+          </div>
+        </div>
+        <!-- New Active Layer Selection for Progress Bar -->
+        <div class="active-layer-selector" data-control="progress">
+          <label>Active Layer:</label>
+          <div class="layer-option">
+            <input type="radio" name="activeProgressLayer" value="1" checked> <span>Layer 1</span>
+          </div>
+          <div class="layer-option">
+            <input type="radio" name="activeProgressLayer" value="2"> <span>Layer 2</span>
+          </div>
+          <div class="layer-option">
+            <input type="radio" name="activeProgressLayer" value="3"> <span>Layer 3</span>
+          </div>
+        </div>
+        <div class="progress-bar-basic-controls">
+          <div class="control-group">
+            <label class="label" for="progressFrames">Frame Num:</label>
+            <input type="number" id="progressFrames" min="1" max="300" value="127">
+          </div>
+          <div class="control-group">
+            <label class="label" for="progressCanvasWidth">Width (px):</label>
+            <input type="number" id="progressCanvasWidth" min="50" max="1000" value="20">
+          </div>
+          <div class="control-group">
+            <label class="label" for="progressCanvasHeight">Height (px):</label>
+            <input type="number" id="progressCanvasHeight" min="50" max="1000" value="300">
+          </div>
+        </div>
+        <!-- Universal Indicator Controls for Progress Bar -->
+        <div class="universal-indicator-controls" id="progressIndicatorControls">
+          <h4>Progress Bar Indicator Controls</h4>
+          <div class="control-group">
+            <label class="label" for="progress_baseColor">Base Color:</label>
+            <input type="color" id="progress_baseColor" value="#343434">
+          </div>
+          <div class="control-group">
+            <label class="label" for="progress_fillColor">Fill Color:</label>
+            <input type="color" id="progress_fillColor" value="#808080">
+          </div>
+          <div class="control-group">
+            <label class="label" for="progressEdgeStroke">Edge Stroke:</label>
+            <input type="checkbox" id="progressEdgeStroke" checked>
+          </div>
+          <div class="control-group">
+            <label class="label" for="progressEdgeThickness">Edge Thickness:</label>
+            <input type="range" id="progressEdgeThickness" min="0" max="10" value="2">
+            <span id="progressEdgeThicknessValue">2</span>
+          </div>
+          <div class="control-group">
+            <label class="label" for="barAutoRounded">Auto Rounded:</label>
+            <input type="checkbox" id="barAutoRounded" checked>
+          </div>
+          <div class="control-group">
+            <label class="label" for="progressEdgeColor">Edge Color:</label>
+            <input type="color" id="progressEdgeColor" value="#808080">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Export and Play Controls -->
+    <div class="export-container">
+      <div class="export-buttons">
+        <button id="playPauseButton" class="play-pause-btn" onclick="document.getElementById('volumeKnobCanvas').__volumeKnob.toggleAnimation()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </button>
+        <button id="manualRotationBtn" class="manual-rotation-btn">Manual Rotation</button>
+        <button id="exportButton" class="export-btn">Export</button>
+        <button id="resetButton" class="reset-button">Reset to Default</button>
+        <button id="saveStateButton" class="save-button">Save Current</button>
+        <button id="loadStateButton" class="load-button">Load Saved</button>
+      </div>
+      <div class="export-options">
+        <input type="radio" id="pngSequence" name="exportType" value="pngSequence">
+        <label for="pngSequence">PNG Sequence</label>
+        <input type="radio" id="spriteSheet" name="exportType" value="spriteSheet" checked>
+        <label for="spriteSheet">Sprite Sheet</label>
+      </div>
+    </div>
+    <!-- Orientation Selection Modal -->
+    <div id="orientationModal" class="modal">
+      <div class="modal-content">
+        <h3>Select Orientations</h3>
+        <div class="orientation-section">
+          <h4>Volume Knob</h4>
+          <div>
+            <input type="radio" id="knobVertical" name="knobOrientation" value="vertical" checked>
+            <label for="knobVertical">Vertical</label>
+            <input type="radio" id="knobHorizontal" name="knobOrientation" value="horizontal">
+            <label for="knobHorizontal">Horizontal</label>
+          </div>
+        </div>
+        <div class="orientation-section">
+          <h4>Progress Bar</h4>
+          <div>
+            <input type="radio" id="progressVertical" name="progressOrientation" value="vertical" checked>
+            <label for="progressVertical">Vertical</label>
+            <input type="radio" id="progressHorizontal" name="progressOrientation" value="horizontal">
+            <label for="progressHorizontal">Horizontal</label>
+          </div>
+        </div>
+        <div class="modal-buttons">
+          <button id="confirmOrientation" class="export-btn">Confirm</button>
+          <button id="cancelOrientation" class="cancel-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <!-- Save/Load State Modal -->
+    <div id="saveLoadModal" class="modal">
+      <div class="modal-content">
+        <h3 id="saveLoadModalTitle">Save Current Design</h3>
+        <div class="save-state-controls">
+          <div class="control-group">
+            <label for="designName">Design Name:</label>
+            <input type="text" id="designName" placeholder="My Design">
+          </div>
+          <div id="savedStatesList" style="display: none;"></div>
+        </div>
+        <div class="modal-buttons">
+          <button id="confirmSaveLoad" class="export-btn">Save</button>
+          <button id="cancelSaveLoad" class="cancel-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="volumeKnob.js"></script>
+  <script src="progressBar.js"></script>
+  <script src="export.js"></script>
+  <script src="controls.js"></script>
+  <script src="saveLoad.js"></script>
+</body>
+</html>

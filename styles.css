@@ -1,0 +1,623 @@
+/* Dark Theme & Modern Minimalist UI Style */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;  
+  line-height: 1.4;
+}
+
+.main-container {
+  width: 95%;
+  max-width: 900px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* Headings */
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+h1 {
+  font-size: 1.8rem;  
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+/* Central Layout: Three Columns for Controls and Display */
+.central-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.central-layout .controls {
+  width: 25%;
+}
+
+.central-layout .display {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Design Display Containers */
+.design-display-container {
+  background: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 56.25%;
+}
+
+.design-display {
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.design-display canvas,
+.design-display svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Controls: Left & Right Panels */
+.controls h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Modified Control Groups for Both Volume Knob and Progress Bar */
+.control-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.control-group .label {
+  width: 120px;
+  font-size: 0.9rem;
+  margin-right: 10px;
+  color: #ffffff;
+}
+
+/* Common Input Styling */
+.control-group input[type="number"] {
+  background-color: #222222;
+  color: #777777;
+  border: 1px solid #444444;
+  padding: 4px 8px;
+  border-radius: 4px;
+  width: 70px;
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+
+.control-group input[type="range"] {
+  flex: none;
+  width: 100px;
+  margin-right: 8px;
+}
+
+/* Value Display Spans */
+.control-group span {
+  min-width: 30px;
+  text-align: right;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+/* Progress Bar Controls Specific */
+.right-controls .control-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 4px 0;
+}
+
+.right-controls .progress-bar-basic-controls .control-group input[type="number"] {
+  width: 70px; 
+  margin-right: 10px;
+}
+
+/* Progress Bar Controls Styling */
+.right-controls .control-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.right-controls .control-group .label {
+  width: 120px;
+  font-size: 0.9rem;
+  margin-right: 10px;
+  color: #ffffff;
+}
+
+.right-controls .control-group input[type="number"],
+.right-controls .control-group input[type="range"],
+.right-controls .control-group input[type="checkbox"] {
+  flex: none;
+  padding: 4px;
+  font-size: 0.9rem;
+  margin-right: 10px;
+  background-color: #333333;
+  border: 1px solid #555555;
+  color: #ffffff;
+  width: 100px;
+}
+
+.right-controls .control-group span {
+  min-width: 30px;
+  text-align: right;
+  color: #ffffff;
+  margin-left: 5px;
+}
+
+/* Layer Selector Styles for Right Controls (Progress Bar) - Light Grey Text and Checkbox */
+.right-controls .layer-selector label,
+.right-controls .layer-selector span {
+  color: #cccccc;
+}
+
+.right-controls .layer-selector input[type="checkbox"] {
+}
+
+/* Layer Selector Styles */
+.layer-selector {
+  margin: 10px 0;
+  text-align: left;
+  padding: 10px;
+  background: #2c2c2c;
+  border-radius: 5px;
+}
+
+.layer-selector input[type="checkbox"] {
+  margin-right: 5px;
+  cursor: pointer;
+  accent-color: #cccccc;
+}
+
+.layer-selector span {
+  color: #cccccc;
+  margin-right: 15px;
+}
+
+/* Active Layer Selector Styles */
+.active-layer-selector {
+  margin: 10px 0;
+  text-align: left;
+  padding: 8px;
+  background: #2c2c2c;
+  border-radius: 5px;
+}
+
+.active-layer-selector label {
+  color: #cccccc;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.active-layer-selector .layer-option {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.active-layer-selector input[type="radio"] {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.active-layer-selector input[type="radio"]:checked + span {
+  color: #4CAF50;
+}
+
+/* Play-Pause and Export Buttons */
+.play-pause-btn, .export-btn, .manual-rotation-btn {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.manual-rotation-btn {
+  background-color: #2196F3;
+}
+
+.manual-rotation-btn.active {
+  background-color: #FF5722;
+}
+
+.manual-rotation-btn:hover {
+  background-color: #1E88E5;
+}
+
+.manual-rotation-btn.active:hover {
+  background-color: #E64A19;
+}
+
+.play-pause-btn {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.play-pause-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.play-pause-btn:active {
+  transform: scale(0.95);
+}
+
+.play-pause-btn svg {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+}
+
+.play-pause-btn:hover,
+.export-btn:hover {
+  background-color: #45a049;
+}
+
+/* Add styles for reset button */
+.reset-button {  
+  background-color: #666;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.reset-button:hover {
+  background-color: #777;
+}
+
+/* Export Options */
+.export-options {
+  text-align: center;
+}
+
+.export-options input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  background-color: #2c2c2c;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  color: #e0e0e0;
+}
+
+.orientation-section {
+  margin-bottom: 15px;
+}
+
+.orientation-section h4 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.orientation-section div {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.cancel-btn {
+  background-color: #555;
+  color: #e0e0e0;
+}
+
+.cancel-btn:hover {
+  background-color: #666;
+}
+
+/* Add styles for Edge Segments controls */
+#edgeSegmentsControls {
+  margin-left: 20px;
+  padding: 10px;
+  border-left: 1px solid #444;
+}
+
+#edgeSegmentsControls .control-group {
+  margin-bottom: 8px;
+}
+
+#volume_edgeSegmentType {
+  background-color: #222222;
+  color: #e0e0e0;
+  border: 1px solid #444444;
+  padding: 4px 8px;
+  border-radius: 4px;
+  width: 100px;
+}
+
+/* Add styles for the segment description text */
+.segment-description {
+  display: none; 
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-top: 5px;
+  line-height: 1.4;
+  padding: 5px;
+  background-color: #222;
+  border-radius: 4px;
+  border-left: 2px solid #4CAF50;
+}
+
+/* Add a grabbing cursor to the volume knob when in manual rotation mode */
+#volumeKnobCanvas.manual-rotation {
+  cursor: grab;
+}
+
+#volumeKnobCanvas.manual-rotation:active {
+  cursor: grabbing;
+}
+
+/* Save and Load buttons */
+.save-button, .load-button {
+  background-color: #2196F3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-button:hover, .load-button:hover {
+  background-color: #1E88E5;
+}
+
+/* Save/Load Modal */
+#savedStatesList {
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 15px 0;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.saved-state-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  margin-bottom: 6px;
+  background-color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.saved-state-item:hover {
+  background-color: #444;
+}
+
+.saved-state-item.selected {
+  background-color: #2196F3;
+  color: white;
+}
+
+.saved-state-item-name {
+  flex-grow: 1;
+  padding-right: 10px;
+}
+
+.saved-state-item-date {
+  color: #999;
+  font-size: 0.8rem;
+}
+
+.saved-state-item-delete {
+  color: #ff5252;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0 5px;
+}
+
+#designName {
+  width: 100%;
+  background-color: #333;
+  color: #e0e0e0;
+  border: 1px solid #555;
+  padding: 8px;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+/* Custom skin file upload styles */
+.custom-file-upload {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 5px 0;
+}
+
+.custom-file-upload input[type="file"] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.custom-file-button {
+  background-color: #2196F3;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.custom-file-button:hover {
+  background-color: #0b7dda;
+}
+
+#customSkinLabel {
+  color: #aaa;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
+  margin-right: 10px;
+}
+
+.clear-skin-btn {
+  background-color: #666;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.3s;
+}
+
+.clear-skin-btn:hover {
+  background-color: #888;
+}
+
+.custom-skin-controls {
+  border-left: 1px solid #444;
+  margin: 8px 0 8px 10px;
+  padding-left: 8px;
+}
+
+/* Responsive adjustments for custom skin controls */
+@media (max-width: 800px) {
+  .custom-file-upload {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .custom-file-button {
+    margin-bottom: 5px;
+  }
+  
+  #customSkinLabel {
+    max-width: 100%;
+    margin-bottom: 5px;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 800px) {
+  .central-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+  .central-layout .controls,
+  .central-layout .display {
+    width: 100%;
+  }
+  .control-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .control-group .label {
+    margin-bottom: 5px;
+  }
+  .export-buttons {
+    flex-direction: column;
+  }
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;  
+  }
+}
+
+/* Modified slider length for barEdgeThickness: make slider shorter to allow the number to sit on the right side */
+#barEdgeThickness {
+  flex: none;
+  width: 100px;
+}
+
+/* Modified slider length for barRounded: make slider shorter to allow the number to sit on the right side */
+#barRounded {
+  flex: none;
+  width: 100px;
+}
